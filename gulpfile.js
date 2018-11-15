@@ -16,6 +16,7 @@ var uglify       = require('gulp-uglify');
 var paths        = require('./gulpfile.paths');
 
 require('./gulpfile.editor')();
+require('./gulpfile.git')();
 
 /*
  * @task: gulp - default task, serve the site in a dev environment.
