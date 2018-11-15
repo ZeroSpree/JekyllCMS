@@ -1,0 +1,10 @@
+---
+permalink: /test/test-new-1234/
+splash:
+  image: false
+title: 'Test new'
+layout: post
+date: '2018-11-07T15:40:14Z'
+
+---
+<p><br></p>

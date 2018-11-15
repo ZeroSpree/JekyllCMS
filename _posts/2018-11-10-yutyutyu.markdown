@@ -1,0 +1,10 @@
+---
+splash:
+  image: false
+title: yutyutyu
+layout: post
+date: '2018-11-10T15:13:34Z'
+permalink: anime/yutyutyu/
+
+---
+<p><br></p>

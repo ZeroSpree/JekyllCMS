@@ -1,0 +1,18 @@
+{%- include posts/partials/variables.html -%}
+
+<article class="card col-12 col-md-4 col-lg-3">
+    {%- comment -%} {{postSplashImg}} {%- endcomment -%}
+    <div class="card__header ar ar-3-2 ar--md-2-1" {{ postSplashBg }}></div>
+
+    <div class="card__body">
+        <time class="card__date">{{postDate}}</time>
+
+        {%- include posts/partials/categories.html -%}
+
+        <h3 class="card__title">
+            <a href="{{ postURL }}">{{ postTitle }}</a>
+        </h3>
+
+        <div class="card__description">{{ postExcerpt }}</div>
+    </div>
+</article>

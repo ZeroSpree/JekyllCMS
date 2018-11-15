@@ -1,0 +1,31 @@
+@mixin r($declarations, $breakpoints: $r-default-breakpoints) {
+
+  @each $bp in $breakpoints {
+    $i: index($breakpoints, $bp);
+
+    @include mq($bp) {
+      @each $property, $values in $declarations {
+
+        #{$property} : nth($values, $i)
+
+      }
+    }
+  }
+
+}
+
+/*
+.foo {
+  @include r((
+    (margin, (5px 20px, 24px)),
+    (font-size, (12px, 28px)),
+  ),(sm, xl));
+}
+
+.bar {
+  @include r((
+    (padding, (15px, 24px, null, 48px 40px)),
+    (width, (12px, 14px, 18px, 24px)),
+  ));
+}
+*/

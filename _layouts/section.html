@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{{content}}
+
+<div class="row">
+{%- for category in site.categories -%}
+    {%- if category[0] == page.slug -%}
+        {%- for post in category[1] -%}
+
+            {%- include posts/card.html -%}
+
+        {%- endfor -%}
+    {%- endif -%}
+{%- endfor -%}
+</div>

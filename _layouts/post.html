@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{%- assign post = page -%}
+{%- include posts/partials/variables.html -%}
+
+<article>
+    {%- include posts/partials/splash.html -%}
+
+    <time>{{postDate}}</time>
+
+    {%- include posts/partials/categories.html -%}
+
+    <h1>{{postTitle}}</h1>
+
+    <h2>{{postSubtitle}}</h2>
+
+    {{content}}
+</article>

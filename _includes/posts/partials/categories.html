@@ -1,0 +1,11 @@
+{%- if post.categories != empty -%}
+<ul class="categories">
+    {%- for section in site.sections -%}
+        {%- if post.categories contains section.slug and section.unlisted != true -%}
+            <li class="categories__item">
+                <a class="categories__link" href="{{ section.url | relative_url }}">{{ section.title }}</a>
+            </li>
+        {%- endif -%}
+    {%- endfor -%}
+</ul>
+{% endif %}

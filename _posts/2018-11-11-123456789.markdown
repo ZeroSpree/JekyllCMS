@@ -1,0 +1,16 @@
+---
+splash:
+  image: /uploads/2018-11-12/pixelart_1542021582271.jpg
+  credits: 'Credits text'
+  ishidden: false
+layout: post
+categories:
+  - anime
+  - new-section-test
+  - whaaaat
+date: '2018-11-11T15:33:44Z'
+permalink: a-new-section/123456789/
+title: '3453'
+
+---
+<p><br></p>

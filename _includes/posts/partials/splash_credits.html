@@ -1,0 +1,7 @@
+<div class="post__credits">
+    {% if postSplashCreditsURL != empty and postSplashCreditsText != empty %}
+        <a href="{{ postSplashCreditsURL }}" target="_blank">{{postSplashCreditsText}}</a>
+    {% elsif postSplashCreditsText != empty %}
+        <span>{{postSplashCreditsText}}</span>
+    {% endif %}
+</div>

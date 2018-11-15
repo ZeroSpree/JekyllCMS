@@ -1,0 +1,10 @@
+---
+splash:
+  image: false
+title: 'tyu bnm7'
+layout: post
+date: '2018-11-10T13:24:03Z'
+permalink: a-new-section/tyu-bnm/
+
+---
+<p><br></p>

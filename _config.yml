@@ -1,0 +1,29 @@
+baseurl: ""
+url: "http://jems.com"
+
+name: JeMS.io # for og:site_name
+title: JeMS is a Jekyll CMS # default meta title
+description: A Jekyll + CMS + Gulp bootstrapper. # default meta description
+image: false
+google_site_verification: false # optional, Google Search Console verification
+twitter_site: false # optional, for twitter cards - Twitter site account, without the @
+twitter_creator: false # optional, for twitter cards - Twitter author account, without the @
+
+markdown: kramdown
+permalink: /:title/
+future: true
+
+exclude: ["_assets",
+          "Gemfile",
+          "Gemfile.lock",
+          "node_modules", 
+          "gulpfile.js", 
+          "gulpfile.editor.js", 
+          "gulpfile.paths.js",
+          "package.json", 
+          "package-lock.json"]
+
+collections:
+  sections:
+    output: true
+    permalink: /:title/
