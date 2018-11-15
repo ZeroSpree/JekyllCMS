@@ -26,7 +26,12 @@ module.exports = function() {
     });
 
     gulp.task('git:publish', function() {
-        runSequence('build', 'git:add', 'git:commit', 'git:push');
+        runSequence(
+            'build', 
+            'git:add', 
+            'git:commit', 
+            'git:push', 
+            'default');
     });
 
 }
