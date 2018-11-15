@@ -1,9 +1,0 @@
----
-splash:
-  image: false
-title: '1'
-layout: post
-date: '2018-11-10T16:52:44Z'
-
----
-<p><br></p>
