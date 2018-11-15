@@ -1,5 +1,5 @@
-baseurl: ""
-url: "http://jems.com"
+baseurl: "/JekyllCMS"
+url: "https://zerospree.github.io"
 
 name: JeMS.io # for og:site_name
 title: JeMS is a Jekyll CMS # default meta title
