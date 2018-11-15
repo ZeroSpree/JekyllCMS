@@ -5,6 +5,12 @@ var runSequence = require('run-sequence');
 
 module.exports = function() {
 
+    gulp.task('git:pull', function(){
+      git.pull('origin', 'master', function (err) {
+        if (err) throw err;
+      });
+    });
+
     gulp.task('git:add', function() {
         return gulp.src('.').pipe(git.add());
     });
@@ -20,7 +26,7 @@ module.exports = function() {
     });
 
     gulp.task('git:publish', function() {
-        runSequence('build', 'git:add', 'git:commit', 'git:push');
+        runSequence('build', 'git:pull', 'git:add', 'git:commit', 'git:push');
     });
 
 }
