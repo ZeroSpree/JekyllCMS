@@ -32,7 +32,7 @@ module.exports = function() {
 
         return nodemon({
                 script : './_editor/server/app.js',
-                ignore : ['gulpfile.js', '_site/', 'node_modules/']
+                ignore : ['_site/', 'node_modules/']
             }).on('start', function() {
                 if (!called) {
                     called = true;
@@ -55,12 +55,19 @@ module.exports = function() {
      * Express Server + watch SCSS
      * Initialize Editor
      */
-    gulp.task('editor', function(callback) {
-        runSequence([
-            'ee:build:server', 
-            'ee:build:styles'], 
-            'ee:build:open', 
-            callback);
+    gulp.task('ee:build', function(callback) {
+        runSequence(['ee:build:server', 'ee:build:styles'], callback);
+
+        // Watch .scss files.
+        gulp.watch('_editor/styles/**/*.scss', ['ee:build:styles']);
+    });
+
+    /*
+     * Express Server + watch SCSS
+     * Initialize Editor
+     */
+    gulp.task('ee:open', function(callback) {
+        runSequence('ee:build', 'ee:build:open', callback);
 
         // Watch .scss files.
         gulp.watch('_editor/styles/**/*.scss', ['ee:build:styles']);

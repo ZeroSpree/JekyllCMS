@@ -159,7 +159,6 @@ gulp.task('build:local', function(callback) {
         'build:images:local', 
         'build:styles:local', 
         'build:fonts'],
-        'editor',
         callback);
 });
 
@@ -174,25 +173,7 @@ gulp.task('build:scripts:watch', ['build:scripts:local'], function(callback) {
     callback();
 });
 
-
-// Production build with minified assets
-gulp.task('build', function(callback) {
-    runSequence(
-        'clean',
-        'build:jekyll',
-        ['build:scripts', 
-        'build:images', 
-        'build:styles', 
-        'build:fonts'],
-        callback);
-});
-
-
-// Static Server + watching files.
-// Note: passing anything besides hard-coded literal paths with globs doesn't
-// seem to work with gulp.watch().
-gulp.task('default', ['build:local'], function() {
-
+gulp.task('gulp:watch', function() {
     browserSync.init({
         port: 4500,
         server: paths.siteDir,
@@ -215,6 +196,32 @@ gulp.task('default', ['build:local'], function() {
 
     // Watch data files.
     gulp.watch('_data/**.*+(yml|yaml|csv|json)', ['build:jekyll:watch']);
+});
+
+
+// Static Server + watching files.
+// Note: passing anything besides hard-coded literal paths with globs doesn't
+// seem to work with gulp.watch().
+gulp.task('default', function(callback) {
+    runSequence('build:local', 'ee:open', 'gulp:watch', callback);
+});
+
+// Rebuild after publish action
+gulp.task('rebuild', function(callback) {
+    runSequence('build:local', 'ee:build', 'gulp:watch', callback);
+});
+
+
+// Production build with minified assets
+gulp.task('build', function(callback) {
+    runSequence(
+        'clean',
+        'build:jekyll',
+        ['build:scripts', 
+        'build:images', 
+        'build:styles', 
+        'build:fonts'],
+        callback);
 });
 
 // Updates Ruby gems
