@@ -5,6 +5,11 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
+
+/*
+ * Remove special chars from an article slug
+ * @returns : 2018-10-20----test!@#$-article => 2018-10-20-test-article
+ */
 utils.sanitizeSlug = function (value) {
     var value = $.trim(value);
 
@@ -64,10 +69,9 @@ utils.yamlSanitize = function(obj) {
 utils.jekyllTime = function() {
     var now = new Date();
     var utcString = now.toISOString().substring(0, 19);
-    var hour = now.getHours();
-    var localDatetime = utcString.substring(0, 11) + (hour < 10 ? "0" + hour : hour) + utcString.substring(13, 19) + 'Z';
+    var hour = ('0' + now.getHours()).slice(-2); // leading 0 hour
 
-    return localDatetime;
+    return utcString.replace(utcString.substring(11, 13), hour);
 }
 
 /*
@@ -90,8 +94,7 @@ utils.sortByProperty = function (key, order='asc') {
         if (varA > varB) comparison = 1; 
         else if (varA < varB) comparison = -1;
 
-        return ((order == 'desc') ? (comparison * -1) : comparison
-        );
+        return ((order == 'desc') ? (comparison * -1) : comparison);
     };
 }
 

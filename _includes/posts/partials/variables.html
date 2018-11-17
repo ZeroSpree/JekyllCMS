@@ -9,8 +9,9 @@
 @var: postDate
 @type: string
 @returns: Nov 11, 2018
+@documentation: https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
 {%- endcomment -%}
-{%- assign postDate = post.date | date: "%b %-d, %Y" -%}
+{%- assign postDate = post.date | date: "%b %-d, %Y - %H:%M:%S" -%}
 
 {%- comment -%}
 @var: postTitle
