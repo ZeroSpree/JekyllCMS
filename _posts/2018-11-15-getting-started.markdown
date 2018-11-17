@@ -4,7 +4,7 @@ splash:
 layout: post
 categories:
   - documentation
-date: '2018-11-15T17:45:39Z'
+date: '2018-11-15T17:45:39'
 title: 'Getting started'
 
 ---
