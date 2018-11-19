@@ -1,6 +1,6 @@
 function save () {
     // Prevent save if there's no title
-    if( !_Data.title.length ) {
+    if( !_Data.title ) {
         UI.notify('Please add a Headline', 'error');
         return false;
     }
