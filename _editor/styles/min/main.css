@@ -1168,6 +1168,10 @@ header {
   color: #000;
 }
 
+/* line 1, _editor/styles/ee/_quill.scss */
+#editor {
+  /* Prevent page 'jump' on copy-paste */
+}
 /* line 2, _editor/styles/ee/_quill.scss */
 #editor .ql-container {
   height: auto;
@@ -1179,15 +1183,29 @@ header {
 #editor .ql-editor {
   min-height: 250px;
 }
-/* line 13, _editor/styles/ee/_quill.scss */
+/* line 14, _editor/styles/ee/_quill.scss */
+#editor .ql-clipboard {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+/* line 23, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+  z-index: 10;
+  background: #fff;
   border-color: #DDDEE4;
 }
-/* line 16, _editor/styles/ee/_quill.scss */
+/* line 30, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .js--upload-localfile {
   float: left;
 }
-/* line 20, _editor/styles/ee/_quill.scss */
+/* line 34, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .upload-localfile {
   display: inline-block;
   height: 24px;
@@ -1198,24 +1216,32 @@ header {
       -ms-user-select: none;
           user-select: none;
 }
-/* line 27, _editor/styles/ee/_quill.scss */
+/* line 41, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .upload-localfile input {
   display: none;
 }
-/* line 31, _editor/styles/ee/_quill.scss */
+/* line 45, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .upload-localfile:hover {
   color: #06c;
 }
-/* line 37, _editor/styles/ee/_quill.scss */
+/* line 51, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .ql-formats button {
   color: #000;
 }
-/* line 40, _editor/styles/ee/_quill.scss */
+/* line 54, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .ql-formats button:hover {
   color: #06c;
 }
-/* line 45, _editor/styles/ee/_quill.scss */
+/* line 59, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar .ql-formats svg {
   width: 18px;
   height: 18px;
+}
+/* line 67, _editor/styles/ee/_quill.scss */
+#editor-body p {
+  margin-bottom: 20px;
+}
+/* line 71, _editor/styles/ee/_quill.scss */
+#editor-body figure {
+  margin: 20px 0;
 }

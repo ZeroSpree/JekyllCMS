@@ -28,7 +28,7 @@ $(function() {
         var $t = $(this);
         var obj = $t.attr('data-object');
         var key = $t.attr('data-key');
-        var dialog = prompt('Image URL', 'https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg');
+        var dialog = prompt('Image URL', '');
 
         if (!dialog) {
             uploadMissingFile();

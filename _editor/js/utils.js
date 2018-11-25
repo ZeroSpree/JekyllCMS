@@ -71,7 +71,7 @@ utils.jekyllTime = function() {
     var utcString = now.toISOString().substring(0, 19);
     var hour = ('0' + now.getHours()).slice(-2); // leading 0 hour
 
-    return utcString.replace(utcString.substring(11, 13), hour);
+    return utcString.substring(0, 11) + hour + utcString.substring(13, 19);
 }
 
 /*

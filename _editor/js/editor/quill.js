@@ -1,6 +1,7 @@
 function getIndex() {
     var range = quill.getSelection();
-    return range ? range.index : 0;
+    console.log(range);
+    return range ? range.index : quill.getLength();
 }
 
 // Insert Read More button
@@ -10,7 +11,7 @@ $('body').on('click', '#ql-readmore', function() {
 
 // Insert Image (triggered from upload.js)
 function quillImageInsert(filepath) {
-    quill.insertText(getIndex(), '\n', Quill.sources.USER);
-    quill.insertEmbed(getIndex() + 1, 'figure', filepath); // custom blot
+    quill.insertEmbed(getIndex(), 'figure', filepath); // custom blot
+    quill.insertText(getIndex() + 1, '\n', Quill.sources.USER);
     quill.setSelection(getIndex() + 2, Quill.sources.SILENT);
 }

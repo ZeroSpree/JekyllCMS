@@ -10,7 +10,21 @@
     min-height: 250px;
   }
 
+  /* Prevent page 'jump' on copy-paste */
+  .ql-clipboard {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
   .ql-toolbar {
+    position: sticky;
+    top: 50px;
+    z-index: 10;
+    background: $white;
     border-color: $border-gray;
 
     .js--upload-localfile {
@@ -46,6 +60,16 @@
         width: 18px;
         height: 18px;
       }
+    }
+  }
+
+  &-body {
+    p {
+      margin-bottom: 20px;
+    }
+
+    figure {
+      margin: 20px 0;
     }
   }
 }
