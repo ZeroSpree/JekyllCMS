@@ -106,6 +106,10 @@ html, body {
   font: italic 400 13px/16px 'Lora';
   color: #BFC2C9;
 }
+::-moz-placeholder, .field-richtext [contenteditable]:empty::before {
+  font: italic 400 13px/16px 'Lora';
+  color: #BFC2C9;
+}
 ::-ms-input-placeholder, .field-richtext [contenteditable]:empty::before {
   font: italic 400 13px/16px 'Lora';
   color: #BFC2C9;
@@ -1194,7 +1198,6 @@ header {
 }
 /* line 23, _editor/styles/ee/_quill.scss */
 #editor .ql-toolbar {
-  position: -webkit-sticky;
   position: sticky;
   top: 50px;
   z-index: 10;
